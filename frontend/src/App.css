@@ -1,0 +1,18 @@
+/* Global app styles and dark background tweaks */
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body {
+	background: #0f1724;
+	/* dark bluish */
+	color: #e6eef8;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.shadow-sm {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
