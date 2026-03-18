@@ -9,8 +9,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         localStorage.removeItem('role');
         navigate('/login');
     };
-
-    const role = localStorage.getItem('role');
+    const isAdmin = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') as string).email === 'admin@gmail.com' : false;
 
     return (
         <div className="min-h-screen bg-gray-900 text-gray-100">
@@ -20,7 +19,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                         <Link to="/" className="text-xl font-semibold">BookMyShow</Link>
                         <Link to="/shows/upcoming" className="text-sm text-gray-300 hover:underline">Upcoming</Link>
                         <Link to="/shows/booked" className="text-sm text-gray-300 hover:underline">Booked</Link>
-                        {role === 'admin' && (
+                        {isAdmin && (
                             <>
                                 <Link to="/admin/shows" className="text-sm text-gray-300 hover:underline">Admin Shows</Link>
                                 <Link to="/admin/shows/create" className="text-sm text-gray-300 hover:underline">Create Show</Link>
