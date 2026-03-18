@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../../services/api';
-import Card from '../../components/common/Card';
 
 type Seat = { id: number; seat_number: number; status: string };
 
