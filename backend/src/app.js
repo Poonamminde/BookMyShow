@@ -14,6 +14,7 @@ app.use(express.json());
 // enable CORS for frontend; set FRONTEND_URL in env to restrict origin
 const corsOptions = {
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 };
 app.use(cors(corsOptions));
